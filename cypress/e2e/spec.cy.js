@@ -36,7 +36,7 @@ describe('Homepage Test', { blockHosts: ['*googlesyndication.com', '*google-anal
      cy.get('[data-qa="account-created"]').should('be.visible')
      cy.get('[data-qa="continue-button"]').click()
      
-     // 🚀 ADD THIS LINE TO BYPASS THE ADS:
+     
      cy.visit('https://automationexercise.com') 
 
      cy.contains('Logged in as ').should('be.visible')
@@ -71,7 +71,7 @@ describe('Homepage Test', { blockHosts: ['*googlesyndication.com', '*google-anal
     cy.get('[data-qa="continue-button"]').click()
     cy.visit('https://automationexercise.com')
     cy.contains('Logout').click()
-      // 🚀 ADD THIS LINE TO NAVIGATE BACK TO THE LOGIN FORM:
+      
     cy.contains('Signup / Login').click()
     cy.wait(1000) 
 
@@ -137,7 +137,7 @@ describe('Homepage Test', { blockHosts: ['*googlesyndication.com', '*google-anal
    it('Test Case 8: Remove Product From Cart', () => {
     cy.contains('Products').click()
     cy.get('.features_items .add-to-cart').first().click()
-    cy.get('.modal-content').should('be.visible') // Ensures modal is stable
+    cy.get('.modal-content').should('be.visible') 
     cy.contains('u', 'View Cart').click()
     cy.get('.cart_quantity_delete').click()
     cy.get('#empty_cart').should('be.visible')
